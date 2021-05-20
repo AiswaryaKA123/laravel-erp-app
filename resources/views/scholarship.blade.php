@@ -5,6 +5,9 @@
         opacity: .7;
         background: #0066ff;
     }
+    div.col{
+        background-image:url("https://media.istockphoto.com/videos/kids-drawing-on-chalkboard-animated-backgroundperspective-view-back-video-id1166974689?s=640x640");
+    }
 </style>
 <div class="container">
 <center><h2>School Scholarship Application form</h2></center>

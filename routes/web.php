@@ -32,4 +32,10 @@ Route::group(['middleware'=>['UserCheck']],function(){
     Route::post('/addstud',[Maincontroller::class,'addstud'])->name('addstud');
     Route::get('/charity',[Maincontroller::class,'charity'])->name('charity');
     Route::get('/scholarship',[Maincontroller::class,'scholarship'])->name('scholarship');
+    Route::get('/tutionfee',[Maincontroller::class,'tution'])->name('tution');
+    Route::get('/event',[Maincontroller::class,'events'])->name('events');
+    Route::get('/bus',[Maincontroller::class,'bus'])->name('bus');
+    Route::get('/profile',[Maincontroller::class,'profile'])->name('profile');
+    
+
 });

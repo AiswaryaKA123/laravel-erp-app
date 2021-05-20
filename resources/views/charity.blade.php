@@ -4,7 +4,15 @@
 <html lang="en">
 <head>
 <style>
-
+h1{
+    
+}
+div.col1{
+    background-image:url("https://d2r2ijn7njrktv.cloudfront.net/IL/uploads/2021/03/03155125/63462723-RighttoEducation.jpg");
+}
+div.col2{
+    background-color:blue;
+}
 </style>
 <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,8 +24,8 @@
 <div class="container">
 <center><h2>Charity Donation Form</h2></center>
     <div class="row">
-        <div class="col col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2"></div>
-        <div class="col col-12 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
+        <div class="col1 col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2"></div>
+        <div class="col2 col-12 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
         <br>
         <br>
         <div class="form-group">

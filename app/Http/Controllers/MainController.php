@@ -43,6 +43,23 @@ class MainController extends Controller
     {
         return view('scholarship');
     }
+    function tution()
+    {
+        return view('tutionfee');
+    }
+    function events()
+    {
+        return view('events');
+    }
+    function bus()
+    {
+        return view('bus');
+    }
+    function profile()
+    {
+        $data=['LoggedUserInfo'=>RegisterModel::where('id','=',session('LoggedUser'))->first()];
+        return view('profile', $data);
+    }
     function addascholarship(Request $request)
     {
         $scholarshipmodel->studfname=$request->studfname;
