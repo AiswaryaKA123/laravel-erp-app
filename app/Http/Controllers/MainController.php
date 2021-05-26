@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\RegisterModel;
 use App\Models\AdmissionModel;
 use App\Models\ScholarshipModel;
+use App\Models\AdminModel;
 use Illuminate\Support\Facades\Hash;
 
 class MainController extends Controller
@@ -59,6 +60,26 @@ class MainController extends Controller
     {
         $data=['LoggedUserInfo'=>RegisterModel::where('id','=',session('LoggedUser'))->first()];
         return view('profile', $data);
+    }
+    function dasboard()
+    {
+        return view('dashboard');
+    }
+    function admin_reg()
+    {
+        return view('admin_reg');
+    }
+    function admin_save(Request $request)
+    {
+        $adminmodel=new AdminModel();
+        $adminmodel->username=$request->username;
+        $adminmodel->password=Hash::make($request->password);
+
+        $adminmodel->save();
+   }
+    function dashboard()
+    {
+        return view('dashboard');
     }
     function addascholarship(Request $request)
     {
@@ -156,27 +177,56 @@ class MainController extends Controller
     function check(Request $request)
     {
         $request->validate([
+            'acctype'=>'required',
             'username'=>'required',
             'password'=>'required|min:4|max:12'
         ]);
 
-        $userinfo=RegisterModel::where('username','=',$request->username)->first();
-
-        if(!$userinfo)
+        $acctype=$request->acctype;
+        if($acctype=="Admin")
         {
-            return back()->with('fail','Username is invalid');
-        }
-        else
-        {
-            if(Hash::check($request->password, $userinfo->password))
+            $admininfo=AdminModel::where('username','=',$request->username)->first();
+            if(!$admininfo)
             {
-                $request->session()->put('LoggedUser',$userinfo->id);
-                return redirect('/home');
+                return back()->with('fail','Invalid username');
             }
             else
             {
-                return back()->with('fail','Password is invalid');
+                if(Hash::check($request->password, $admininfo->password))
+                {
+                    $request->session()->put('LoggedUser',$admininfo->id);
+                    return redirect('/dashboard');
+                }
+                else
+                {
+                    return back()->with('fail','Invalid password');
+                }
             }
+        }
+        else if($acctype=="User")
+        {
+            $userinfo=RegisterModel::where('username','=',$request->username)->first();
+
+            if(!$userinfo)
+            {
+                return back()->with('fail','Invalid username');
+            }
+            else
+            {
+                if(Hash::check($request->password, $userinfo->password))
+                {
+                    $request->session()->put('LoggedUser',$userinfo->id);
+                    return redirect('/userhome');
+                }
+                else
+                {
+                    return back()->with('fail','Invalid password');
+                }
+            }
+        }
+        else
+        {
+            return back()->with('fail','Select an account type');
         }
     }
     function logout()
@@ -191,10 +241,6 @@ class MainController extends Controller
     {
         $data=['LoggedUserInfo'=>RegisterModel::where('id','=',session('LoggedUser'))->first()];
         return view('home', $data);
-    }
-    function profile()
-    {
-        return view('profile');
     }
     function about()
     {

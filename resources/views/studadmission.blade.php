@@ -1,11 +1,26 @@
 @extends('theme')
 @section('content')
+<html>
+<head>
+<style>
+
+div.col2{
+    background-color:lightblue;
+}
+div.col1{
+    background-image:url("https://www.vignanschools.org/images/ad-process-1.jpg");
+}
+</style>
+
+
+</head>
+<body>
 
 <div class="container">
 <center><h2>Student Application form</h2></center>
     <div class="row">
-        <div class="col col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2"></div>
-        <div class="col col-12 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
+        <div class="col1 col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2"></div>
+        <div class="col2 col-12 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
         <br>
         <br>
         <form action="/addstud" method="post">
@@ -111,10 +126,12 @@
                 </div>
                 <p></p>
                 <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="submmit" class="btn btn-primary">Submit</button>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="submmit" class="btn btn-danger">Submit</button>
         </form>
         </div>
         <div class="col col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2"></div>
     </div>
 </div>
 @endsection
+</body>
+</html>

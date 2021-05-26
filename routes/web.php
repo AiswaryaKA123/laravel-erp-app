@@ -17,14 +17,18 @@ use App\Http\Controllers\MainController;
 Route::post('/registersave',[MainController::class,'save'])->name('registersave');
 Route::post('/logincheck',[MainController::class,'check'])->name('logincheck');
 Route::get('/logout',[MainController::class,'logout'])->name('logout');
+Route::get('/admin_reg',[MainController::class,'admin_reg'])->name('admin_reg');
+Route::get('/admin_save',[MainController::class,'admin_save'])->name('admin_save');
+Route::get('/dashboard',[MainController::class,'dashboard'])->name('dashboard');
 Route::get('/about',[MainController::class,'about'])->name('about');
 Route::get('/contact',[MainController::class,'contact'])->name('contact');
-Route::get('/profile',[MainController::class,'profile'])->name('profile');
+
 
 Route::group(['middleware'=>['UserCheck']],function(){
-    Route::get('/login',[MainController::class,'login'])->name('login');
+    Route::get('/login',[MainController::class,'login'])->name('login'); 
     Route::get('/register',[MainController::class,'register'])->name('register');
     Route::get('/home',[MainController::class,'home'])->name('home');
+    Route::get('/profile',[MainController::class,'profile'])->name('profile');
     Route::get('/gallery',[MainController::class,'gallery'])->name('gallery');
     Route::get('/scholarship',[MainController::class,'scholarship'])->name('scholarship');
     Route::get('/viewstudent',[Maincontroller::class,'viewstudent'])->name('viewstudent');
@@ -33,9 +37,9 @@ Route::group(['middleware'=>['UserCheck']],function(){
     Route::get('/charity',[Maincontroller::class,'charity'])->name('charity');
     Route::get('/scholarship',[Maincontroller::class,'scholarship'])->name('scholarship');
     Route::get('/tutionfee',[Maincontroller::class,'tution'])->name('tution');
-    Route::get('/event',[Maincontroller::class,'events'])->name('events');
+    Route::get('/events',[Maincontroller::class,'events'])->name('events');
     Route::get('/bus',[Maincontroller::class,'bus'])->name('bus');
-    Route::get('/profile',[Maincontroller::class,'profile'])->name('profile');
+    
     
 
 });
