@@ -16,7 +16,8 @@
         <div class="col col-12 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
         <br>
         <br>
-            <form action="/scholarshipadd" method="post">
+            <form action="/scholarship_save" method="post">
+            @csrf
                 <div class="form-group">
                     <label><h5>First name</h5></label>
                     <input type="text" class="form-control" name="studfname" placeholder="Enter student first name" required>

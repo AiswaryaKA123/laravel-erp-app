@@ -7,6 +7,28 @@
     <title>admin</title>
 </head>
 <body>
+    <form action=" " method="get">
+    <div class="container">
     
+    <div class="row">
+    
+    <div class="col col-12 col-sm-4 col-md-4 col-lg-4"> </div>
+    <div class="col col-12 col-sm-4 col-md-4 col-lg-4"> </div>
+    <div class="col col-12 col-sm-4 col-md-4 col-lg-4"> </div>
+    
+    
+    
+    
+    
+    </div>
+    
+    
+    
+    
+    
+    </div>
+    
+    
+    </form>
 </body>
 </html>

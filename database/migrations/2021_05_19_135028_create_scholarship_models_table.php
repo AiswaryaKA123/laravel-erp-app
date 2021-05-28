@@ -15,6 +15,19 @@ class CreateScholarshipModelsTable extends Migration
     {
         Schema::create('scholarship_models', function (Blueprint $table) {
             $table->id();
+            $table->string('studfname');
+            $table->string('studlname');
+            $table->string('studid');
+            $table->string('studcaddress');
+            $table->string('studpaddress');
+            $table->string('studcast');
+            $table->string('studreligion');
+            $table->string('studstate');
+            $table->string('studcity');
+            $table->string('studpin');
+            $table->string('studcountry');
+            $table->string('studemail');
+            $table->string('studphoneno');
             $table->timestamps();
         });
     }

@@ -23,15 +23,14 @@ div.col2{
 <body>
 <div class="container">
 <center><h2>Charity Donation Form</h2></center>
+
     <div class="row">
         <div class="col1 col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2"></div>
         <div class="col2 col-12 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
         <br>
         <br>
-        <div class="form-group">
-                    <label><h5>Charity id</h5></label>
-                    <input type="text" class="form-control" name="id" placeholder="ex 1234" required>
-                </div>
+        <form action="/charity_save" method="post">
+        {{csrf_field()}}
                 <p></p>
                 <div class="form-group">
                     <label><h5>Full name</h5></label>
@@ -57,7 +56,7 @@ div.col2{
                 <p></p>
                 <div class="form-group">
                         <label><h5>Message</h5></label>
-                        <textarea name="msg" cols="30" rows="8" class="form-control"required></textarea>
+                        <textarea name="message" cols="30" rows="8" class="form-control"></textarea>
                         
                     </div>
                     <p></p>

@@ -35,6 +35,7 @@
             <li><a class="dropdown-item" href="/tutionfee">Tution Fee</a></li>
             <li><a class="dropdown-item" href="/bus">Bus Fares</a></li>
             <li><a class="dropdown-item" href="/scholarship">Scholarships</a></li>
+            <li><a class="dropdown-item" href="/sponsor">Sponsorships</a></li>
             <li><a class="dropdown-item" href="/charity">Charity</a></li>
           </ul>
         </li>

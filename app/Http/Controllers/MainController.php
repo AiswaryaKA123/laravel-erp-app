@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\RegisterModel;
 use App\Models\AdmissionModel;
 use App\Models\ScholarshipModel;
+use App\Models\CharityModel;
 use App\Models\AdminModel;
+use App\Models\SponsorModel;
 use Illuminate\Support\Facades\Hash;
 
 class MainController extends Controller
@@ -27,6 +29,30 @@ class MainController extends Controller
     {
         return view('scholarship');
     }
+    function sponsor()
+    {
+        return view('sponsor');
+    }
+    function scholarship_save(Request $request)
+    {
+        $scholarshipmodel=new ScholarshipModel();
+        $scholarshipmodel->studfname=$request->studfname;
+        $scholarshipmodel->studlname=$request->studlname;
+        $scholarshipmodel->studid=$request->studid;
+        $scholarshipmodel->studcaddress=$request->studcaddress;
+        $scholarshipmodel->studpaddress=$request->studpaddress;
+        $scholarshipmodel->studcast=$request->studcast;
+        $scholarshipmodel->studreligion=$request->studreligion;
+        $scholarshipmodel->studstate=$request->studstate;
+        $scholarshipmodel->studcity=$request->studcity;
+        $scholarshipmodel->studpin=$request->studpin;
+        $scholarshipmodel->studcountry=$request->studcountry;
+        $scholarshipmodel->studemail=$request->studemail;
+        $scholarshipmodel->studphoneno=$request->studphoneno;
+
+        $scholarshipmodel->save();
+
+    }
     function viewstudent()
     {
         return view('viewstudent');
@@ -39,6 +65,19 @@ class MainController extends Controller
     function charity()
     {
         return view('charity');
+    }
+    function charity_save(Request $request)
+    {
+        $charitymodel=new CharityModel();
+        $charitymodel->fname=$request->fname;
+        $charitymodel->lname=$request->lname;
+        $charitymodel->email=$request->email;
+        $charitymodel->acode=$request->acode;
+        $charitymodel->phno=$request->phno;
+        $charitymodel->amount=$request->amount;
+        $charitymodel->msg=$request->messsage;
+
+        $charitymodel->save();
     }
     function scholrships()
     {
@@ -80,6 +119,21 @@ class MainController extends Controller
     function dashboard()
     {
         return view('dashboard');
+    }
+    function addcharity(Request $request)
+    {
+        $charityaddmodel=new CharityModel();
+    
+        $charityaddmodel->fname=$request->fname;
+        $charityaddmodel->lname=$request->lname;
+        $charityaddmodel->email=$request->email;
+        $charityaddmodel->acode=$request->acode;
+        $charityaddmodel->phno=$request->phno;
+        $charityaddmodel->amount=$request->amount;
+        $charityaddmodel->msg=$request->msg;
+        $charityaddmodel->save();
+
+
     }
     function addascholarship(Request $request)
     {
@@ -124,6 +178,20 @@ class MainController extends Controller
         $studaddmodel->save();
 
         //return redirect('/home');
+    }
+    function sponsor_save(Request $request)
+    {
+        $sponseraddmodel=new SponsorModel();
+        $sponseraddmodel->sponsor_id=$request->sponsor_id;
+        $sponseraddmodel->spname=$request->spname;
+        $sponseraddmodel->email=$request->email;
+        $sponseraddmodel->place=$request->place;
+        $sponseraddmodel->occu=$request->occu;
+        $sponseraddmodel->save();
+
+
+        
+
     }
     function save(Request $request)
     {
@@ -216,7 +284,7 @@ class MainController extends Controller
                 if(Hash::check($request->password, $userinfo->password))
                 {
                     $request->session()->put('LoggedUser',$userinfo->id);
-                    return redirect('/userhome');
+                    return redirect('/home');
                 }
                 else
                 {

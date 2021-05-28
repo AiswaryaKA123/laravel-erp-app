@@ -35,11 +35,12 @@ Route::group(['middleware'=>['UserCheck']],function(){
     Route::get('/studadmission',[Maincontroller::class,'studadmission'])->name('studadmission');
     Route::post('/addstud',[Maincontroller::class,'addstud'])->name('addstud');
     Route::get('/charity',[Maincontroller::class,'charity'])->name('charity');
+    Route::post('/charity_save',[Maincontroller::class,'charity_save'])->name('charity_save');
     Route::get('/scholarship',[Maincontroller::class,'scholarship'])->name('scholarship');
+    Route::post('/scholarship_save',[Maincontroller::class,'scholarship_save'])->name('scholarship_save');
     Route::get('/tutionfee',[Maincontroller::class,'tution'])->name('tution');
     Route::get('/events',[Maincontroller::class,'events'])->name('events');
     Route::get('/bus',[Maincontroller::class,'bus'])->name('bus');
-    
-    
-
+    Route::get('/sponsor',[Maincontroller::class,'sponsor'])->name('sponsor');
+    Route::post('/sponsor_save',[Maincontroller::class,'sponsor_save'])->name('sponsor_save');
 });
