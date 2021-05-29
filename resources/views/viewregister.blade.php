@@ -20,14 +20,24 @@
 
 
 <table class="table table table-dark">
-<tr><th scope="row">sname</th>
-    <th scope="row">class</th>
-    <th scope="row">admyear</th>
+<tr><th scope="row">fname</th>
+    <th scope="row">lname</th>
+    <th scope="row">flexRadioDefault</th>
     <th scope="row">dob</th>
-    <th scope="row">aadhar</th>
-    <th scope="row">Phoneno</th>
-    <th scope="row">Address</th>
-    <th scope="row">Email</th>
+    <th scope="row">address</th>
+    <th scope="row">faname</th>
+    <th scope="row">mname</th>
+    <th scope="row">gname</th>
+    <th scope="row">focc</th>
+    <th scope="row">mocc</th>
+    <th scope="row">class</th>
+    <th scope="row">section</th>
+    <th scope="row">email</th>
+    <th scope="row">phoneno</th>
+    <th scope="row">username</th>
+    <th scope="row">password</th>
+    <th scope="row">cpassword</th>
+    
    <th></th>
    <th></th>
    

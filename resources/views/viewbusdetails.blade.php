@@ -20,14 +20,13 @@
 
 
 <table class="table table table-dark">
-<tr><th scope="row">sname</th>
-    <th scope="row">class</th>
-    <th scope="row">admyear</th>
-    <th scope="row">dob</th>
-    <th scope="row">aadhar</th>
-    <th scope="row">Phoneno</th>
-    <th scope="row">Address</th>
-    <th scope="row">Email</th>
+<tr><th scope="row">busno</th>
+    <th scope="row">dname</th>
+    <th scope="row">route</th>
+    <th scope="row">bfee</th>
+    <th scope="row">date</th>
+    
+    
    <th></th>
    <th></th>
    
@@ -36,21 +35,17 @@
 
 <tr class="table-primary">
    
-    <td >{{$add->fname}}</td>
+    <td >{{$add->busno}}</td>
   
-    <td>{{$add->gname}}</td>
+    <td>{{$add->dname}}</td>
    
-    <td>{{$add->bday}}</td>
+    <td>{{$add->route}}</td>
 
-    <td>{{$add->course}}</td>
+    <td>{{$add->bfee}}</td>
 
-    <td>{{$add->gender}}</td>
+    <td>{{$add->date}}</td>
 
-    <td>{{$add->pno}}</td>
-
-    <td>{{$add->cadd}}</td>
-
-    <td>{{$add->lemail}}</td>
+    
 
 
 

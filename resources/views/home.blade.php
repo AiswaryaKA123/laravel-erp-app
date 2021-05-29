@@ -64,7 +64,7 @@
 </nav>
 <br>
 <br>
-<center><h5><a href="studadmission" class="btn btn-outline-primary">Addmission</a></h5></center>
+<center><h5><a href="studadmission" class="btn btn-outline-primary">Admission</a></h5></center>
 <br>
 <br>
 @endsection

@@ -9,6 +9,8 @@ use App\Models\ScholarshipModel;
 use App\Models\CharityModel;
 use App\Models\AdminModel;
 use App\Models\SponsorModel;
+use App\Models\BusModel;
+use App\Models\PaymentModel;
 use Illuminate\Support\Facades\Hash;
 
 class MainController extends Controller
@@ -32,6 +34,10 @@ class MainController extends Controller
     function sponsor()
     {
         return view('sponsor');
+    }
+    function bus()
+    {
+        return view('bus');
     }
     function scholarship_save(Request $request)
     {
@@ -91,10 +97,7 @@ class MainController extends Controller
     {
         return view('events');
     }
-    function bus()
-    {
-        return view('bus');
-    }
+    
     function profile()
     {
         $data=['LoggedUserInfo'=>RegisterModel::where('id','=',session('LoggedUser'))->first()];
@@ -110,11 +113,21 @@ class MainController extends Controller
     }
     function admin_save(Request $request)
     {
-        $adminmodel=new AdminModel();
-        $adminmodel->username=$request->username;
-        $adminmodel->password=Hash::make($request->password);
 
-        $adminmodel->save();
+        if($request->password != $request->cpassword)
+        {
+            echo "Passwords isn't matches. Try again.";
+        }
+        else
+        {
+            $adminmodel=new AdminModel();
+            $adminmodel->username=$request->username;
+            $adminmodel->password=Hash::make($request->password);
+
+            $adminmodel->save();
+
+            echo "Admin registration successfull.";
+        }
    }
     function dashboard()
     {
@@ -188,11 +201,22 @@ class MainController extends Controller
         $sponseraddmodel->place=$request->place;
         $sponseraddmodel->occu=$request->occu;
         $sponseraddmodel->save();
-
-
-        
-
     }
+    function bus_save(Request $request)
+    {
+        $busaddmodel=new BusModel();
+        $busaddmodel->busno=$request->busno;
+        $busaddmodel->dname=$request->dname;
+        $busaddmodel->route=$request->route;
+        $busaddmodel->bfee=$request->bfee;
+        $busaddmodel->date=$request->date;
+        $busaddmodel->save();
+    }
+
+
+
+ 
+
     function save(Request $request)
     {
         $request->validate([
@@ -317,5 +341,20 @@ class MainController extends Controller
     function contact()
     {
         return view('contact');
+    }
+    function payment_save()
+    {
+        
+        $payaddmodel=new PaymentModel();
+        $payaddmodel->sname=$request->fname;
+        $payaddmodel->sclass=$request->sclass;
+        $payaddmodel->fee=$request->fee;
+        $payaddmodel->payment=$request->payment;
+        $payaddmodel->cardno=$request->cardno;
+        $payaddmodel->date=$request->date;
+        $payaddmodel->month=$request->month;
+        $payaddmodel->cvv=$request->cvv;
+        $payaddmodel->save();
+
     }
 }

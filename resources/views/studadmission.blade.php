@@ -43,7 +43,7 @@ div.col1{
                 </div>
                 <p></p>
                 <div class="form-group">
-                <label><h5>place of birth</h5><input type="text" class="form-control" name="aadhaar" placeholder="Aadhaar no" required></label>
+                <label><h5>place of birth</h5><input type="text" class="form-control" name="pob" placeholder="Aadhaar no" required></label>
                 <label><h5>District</h5><input type="text" class="form-control" name="district" placeholder="Select state" required></label>
                     
                 </div>

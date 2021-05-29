@@ -7,15 +7,22 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="/admin_save" method="get">
-    <table class="table table-borderless">
+<br>
+<center><h2>Admin Registration</h2></center>
+    <form action="/admin_save" method="post">
+    @csrf
+    <table align="center" class="table table-borderless">
         <tr>
-            <td>username</td>
-            <td><input type="text" name="username" class="form-control"></td>
+            <td>Username</td>
+            <td><input type="text" name="username" class="form-control" required></td>
         </tr>
         <tr>
             <td>Password</td>
-            <td><input type="password" name="password" class="form-control"></td>
+            <td><input type="password" name="password" class="form-control" required></td>
+        </tr>
+        <tr>
+            <td>Confirm password</td>
+            <td><input type="password" name="cpassword" class="form-control" required></td>
         </tr>
         <tr>
             <td></td>

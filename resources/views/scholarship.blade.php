@@ -5,15 +5,15 @@
         opacity: .7;
         background: #0066ff;
     }
-    div.col{
+    div.col1{
         background-image:url("https://media.istockphoto.com/videos/kids-drawing-on-chalkboard-animated-backgroundperspective-view-back-video-id1166974689?s=640x640");
     }
 </style>
 <div class="container">
 <center><h2>School Scholarship Application form</h2></center>
     <div class="row">
-        <div class="col col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2"></div>
-        <div class="col col-12 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
+        <div class="col1 col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2"></div>
+        <div class="col2 col-12 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
         <br>
         <br>
             <form action="/scholarship_save" method="post">
