@@ -342,19 +342,26 @@ class MainController extends Controller
     {
         return view('contact');
     }
-    function payment_save()
+    function payment_save(Request $request)
     {
+
+        $status="payed";        
+        $paymentfeemodel=new PaymentFeeModel();
+        $paymentfeemodel->name=$request->name;
+        $payadpaymentfeemodeldmodel->card_no=$request->card_no;
+        $paymentfeemodel->cvc=$request->cvc;
+        $paymentfeemodel->exp_month=$request->exp_month;
+        $paymentfeemodel->exp_year=$request->exp_year;
+        $paymentfeemodel->status=$status;
         
-        $payaddmodel=new PaymentModel();
-        $payaddmodel->sname=$request->fname;
-        $payaddmodel->sclass=$request->sclass;
-        $payaddmodel->fee=$request->fee;
-        $payaddmodel->payment=$request->payment;
-        $payaddmodel->cardno=$request->cardno;
-        $payaddmodel->date=$request->date;
-        $payaddmodel->month=$request->month;
-        $payaddmodel->cvv=$request->cvv;
-        $payaddmodel->save();
+        $save=$paymentfeemodel->save();
+        if($save)
+        {
+            return back()->with('success','Payment Successfull');
+        }
+        else{
+            return back()->with('fail','Something went wrong. Try again later.');
+        }
 
     }
 }
