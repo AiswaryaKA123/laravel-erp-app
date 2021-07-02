@@ -46,6 +46,7 @@ Route::group(['middleware'=>['UserCheck']],function(){
     Route::get('/bus',[Maincontroller::class,'bus'])->name('bus');
     Route::post('/bus_save',[Maincontroller::class,'bus_save'])->name('bus_save');
     Route::get('/dashboard',[Maincontroller::class,'dashboard'])->name('dashboard');
+    Route::get('/payment',[Maincontroller::class,'payment'])->name('payment');
     Route::post('/payment_save',[Maincontroller::class,'payment_save'])->name('payment_save');
 
 });

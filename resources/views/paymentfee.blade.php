@@ -50,7 +50,7 @@
                 </div>
                 <br>
                 <div class="d-grid gap-2">
-  <button class="btn btn-primary btn-lg" type="submit">Pay &nbsp; ₹ 250></button>
+  <button class="btn btn-primary btn-lg" type="submit">Pay</button>
 </div>
             </form>
             <br>

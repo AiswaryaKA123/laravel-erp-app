@@ -6,10 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .btn .btn-primary{
+            float:left;
+        }
+    </style>
 </head>
 <body>
 
-<div></div>
+<div><a href="/payment" class="btn btn-primary">Payment</a></div>
 <marquee behavior="" direction=""><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXhGfFe87iPCGwLu_6vEpY36R1ny_TnmtewA&usqp=CAU" alt="" height="440px" width="440px">
 <img src="https://images.indianexpress.com/2019/07/school-759-2.jpg" alt="" height="440px" width="440px"></marquee>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

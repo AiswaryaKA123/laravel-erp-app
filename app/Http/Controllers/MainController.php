@@ -342,6 +342,10 @@ class MainController extends Controller
     {
         return view('contact');
     }
+    function payment()
+    {
+        return view('paymentfee');
+    }
     function payment_save(Request $request)
     {
 
